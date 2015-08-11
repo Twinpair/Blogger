@@ -1,22 +1,24 @@
 # Rails Application - Blogger
 
-I learned how to make my first rails application.
+<h4>I learned how to make my first rails application.</h4>
 
 Features include:
 
--Posting new blogs
+<ul>
+ <li>Posting new blogs</li>
 
--Commenting on blog post
+<li>Commenting on blog post</li>
 
--Uploading images to a blog
+<li>Uploading images to a blog</li>
 
--CRUD features on a blog post
+<li>CRUD features on a blog post</li>
 
--Login authentication
+<li>Login authentication</li>
 
--Gueat User allowed
+<li>Gueat User allowed</li>
+</ul>
 
-I'm hosting it on Heroku if you want to check it out
+<h4>I'm hosting this application on Heroku if you want to check it out<h4>
 
 Heroku link: https://thawing-temple-1008.herokuapp.com/
 
