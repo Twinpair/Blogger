@@ -1,6 +1,4 @@
-# Rails Application - Blogger
-
-<h4>I learned how to make my first rails application.<h4>
+# Rails Application - Blogger <h4>
 
 Features include:
 
