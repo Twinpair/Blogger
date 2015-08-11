@@ -1,6 +1,6 @@
-# Rails Application - Blogger <h4>
+# Rails Application - Blogger 
 
-Features include:
+<h4>Features include:<h4>
 
 <ul>
  <li>Posting new blogs</li>
