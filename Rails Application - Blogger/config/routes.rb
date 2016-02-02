@@ -1,5 +1,5 @@
 Blogger::Application.routes.draw do
-  root to: 'author_sessions#new'
+  root to: 'articles#index'
 
   resources :articles do
     resources :comments
