@@ -1,5 +1,4 @@
 class TagsController < ApplicationController
-	before_filter :require_login, only: [:destroy]
 	
 	def index
 		@tag = Tag.all

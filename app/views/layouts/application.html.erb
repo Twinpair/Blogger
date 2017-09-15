@@ -14,15 +14,7 @@
     <div id="content">
       <%= yield %>
       <hr>
-      <h6>
-        <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %>
-          <%= link_to "(logout)", logout_path %>
-        <% else %>
-          <%= link_to "(login)", login_path %>
-          <%= link_to "(Create new user)", new_author_path %>
-        <% end %>
-      </h6>
+      <%= link_to "Search by Tags", tags_path %>
     </div>
   </div>
 </body>
