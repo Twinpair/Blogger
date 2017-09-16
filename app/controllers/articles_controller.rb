@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-include ArticlesHelper
 
 	def index
 		@articles = Article.all
@@ -11,9 +10,12 @@ include ArticlesHelper
 
 	def create
 		@article = Article.new(article_params)
-		@article.save
-		flash.notice = "Article '#{@article.title}' created"
-		redirect_to article_path(@article)
+		if @article.save
+			flash.notice = "Article '#{@article.title}' created"
+			redirect_to article_path(@article)
+		else
+			render :new
+		end
 	end
 
 	def edit
@@ -28,9 +30,12 @@ include ArticlesHelper
 
 	def update
 		@article = Article.find(params[:id])
-		@article.update(article_params)
-		flash.notice = "Article '#{@article.title}' updated!"
-		redirect_to article_path(@article)
+		if @article.update(article_params)
+			flash.notice = "Article '#{@article.title}' updated!"
+			redirect_to article_path(@article)
+		else
+			render :edit
+		end
 	end
 
 	def destroy
@@ -39,4 +44,11 @@ include ArticlesHelper
 	    flash.notice = "Article '#{@article.title}' deleted!"
 		redirect_to articles_path
 	end
+
+private
+
+	def article_params
+  		params.require(:article).permit(:title, :body, :tag_list, :image, :author_name)
+	end
+
 end

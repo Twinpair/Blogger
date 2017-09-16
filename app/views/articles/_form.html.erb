@@ -5,6 +5,10 @@
     <% end %>
 	</ul>
 	<p>
+	    <%= f.label :author_name, "Your Name" %><br />
+	    <%= f.text_field :author_name %>
+	</p>
+	<p>
 	    <%= f.label :title %><br />
 	    <%= f.text_field :title %>
 	</p>
@@ -13,17 +17,17 @@
 	    <%= f.text_area :body %>
 	</p>
 	<p>
-	  <%= f.label :tag_list %><br />
-	  <%= f.text_field :tag_list %>
-	</p>
+	  <%= f.label :tag_list, "Tags (Seperated by ,)" %><br />
+	  <%= f.text_field :tag_list, placeholder: "ex: programming, rails, cooking" %>
+	</p><br>
 	<p>
 		<% if @article.image.exists? %>
 			<%= image_tag @article.image.url %><br />
 		<% end %>
 	   <%= f.label :image, "Attach an Image" %><br />
 	   <%= f.file_field :image %>
-	</p>
+	</p><br>
 	<p>
 	    <%= f.submit %>
-	</p>
+	</p><br>
 <% end %>

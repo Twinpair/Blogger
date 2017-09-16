@@ -1,7 +1,8 @@
-<h1><%= @article.title %></h1>
+<h1>"<%= @article.title %>" by <%= @article.author_name %></h1>
 <br>
-<p><%= @article.body %></p>
+<h2><%= @article.body %></h2>
 <br> 
+<h4>Created on <%= @article.created_at.strftime("%b %d %Y")%></h4>
 <% if @article.image.exists? %>
 	<p><%= image_tag @article.image.url %></p>
 <% end %>
