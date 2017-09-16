@@ -36,6 +36,10 @@ title-label{
   width: 30%;
   margin: 10px 10px;
 }
+.required-star{
+  color: red;
+  font-weight: bold;
+}
 
 /* Comment Form */
 #comment-form{
