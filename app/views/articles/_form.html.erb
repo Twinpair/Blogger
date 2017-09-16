@@ -1,33 +1,31 @@
 <%= form_for(@article, html: {multipart: true}) do |f| %>
-	<ul>
+  <ul>
     <% @article.errors.full_messages.each do |error| %>
-    	<li><%= error %></li>
+      <li><%= error %></li>
     <% end %>
-	</ul>
-	<p>
-	    <%= f.label :author_name, "Your Name" %><br />
-	    <%= f.text_field :author_name %>
-	</p>
-	<p>
-	    <%= f.label :title %><br />
-	    <%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label :body %><br />
-	    <%= f.text_area :body %>
-	</p>
-	<p>
-	  <%= f.label :tag_list, "Tags (Seperated by ,)" %><br />
-	  <%= f.text_field :tag_list, placeholder: "ex: programming, rails, cooking" %>
-	</p><br>
-	<p>
-		<% if @article.image.exists? %>
-			<%= image_tag @article.image.url %><br />
-		<% end %>
-	   <%= f.label :image, "Attach an Image" %><br />
-	   <%= f.file_field :image %>
-	</p><br>
-	<p>
-	    <%= f.submit %>
-	</p><br>
+  </ul>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", maxlength: "230", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :author_name, "Your Name" %>
+    <%= f.text_field :author_name , class: "form-control", maxlength: "30", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, "Body Text" %>
+    <%= f.text_area :body, class: "form-control", rows: "10", maxlength: "1600", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tag_list, "Tags (Seperated by ',' )" %>
+    <%= f.text_field :tag_list, placeholder: "ex: programming, rails, cooking", class: "form-control", maxlength: "230" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, "Add an image to your post" %>
+    <%= f.file_field :image, class: "btn btn-primary" %>
+  </div>
+  <div class="form-group">
+    <a href="/articles" class="btn btn-lg btn-danger" id="cancel-button">Cancel</a>
+    <%= f.submit "Create", class: "btn btn-lg btn-success", id: "submit-button" %>
+  </div>
 <% end %>

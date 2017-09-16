@@ -1,0 +1,57 @@
+/* Sitewide CSS */
+body{
+  margin-top: 80px;
+}
+.header-text{
+  text-align: center;
+  margin: 10px 10px;
+}
+.table-name{
+  color: blue;
+}
+
+/* Navbar*/
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  margin-right: 10px;
+}
+
+/* Articles Index */
+title-label{
+  font-weight: 400;
+  font-size: 24px;
+}
+.btn-primary.create {
+  margin-top: 10px;
+}
+
+/* Articles Show */
+#article-body{
+  margin: 50px 50px;
+}
+
+/* Articles Form */
+#cancel-button, #submit-button{
+  color: white;
+  width: 30%;
+  margin: 10px 10px;
+}
+
+/* Comment Form */
+#comment-form{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.red{
+  color:red;
+}
+.form-area{
+  background-color: #FAFAFA;
+  padding: 10px 40px 60px;
+  margin: 10px 0px 60px;
+  border: 1px solid GREY;
+}
+#comment-text-area{
+  resize: none;
+}
+

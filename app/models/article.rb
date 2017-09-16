@@ -1,12 +1,13 @@
 class Article < ActiveRecord::Base
-	has_many :comments
-	has_many :taggings
+	has_many :comments, dependent: :destroy
+	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings
 	has_attached_file :image
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-	validates :author_name, presence: {message: "is required"}
-	validates :title, presence: {message: "is required"}
-	validates :body, presence: {message: "is required"}
+	validates :author_name, presence: {message: "is required"}, length: {maximum: 30}
+	validates :title, presence: {message: "is required"}, length: {maximum: 230}
+	validates :body, presence: {message: "is required"}, length: {maximum: 1600}
+	validates :tag_list, length: {maximum: 230}
 
 	def tag_list=(tags_string)
 		tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq

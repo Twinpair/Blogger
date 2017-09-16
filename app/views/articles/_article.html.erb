@@ -1,0 +1,6 @@
+<tr onclick="document.location='<%= article_path(article.id)%>'" style="cursor: pointer;">
+  <td><p class="table-name"><%= truncate article.title, length: 130 %></p></td>
+  <td><p><%= article.author_name %></p></td>
+  <td><p><%= article.created_at.strftime('%b %d, %Y') %></p></td>
+  <td><p><%= article.comments.count %></p></td>
+</tr>
