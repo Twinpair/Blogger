@@ -5,10 +5,10 @@
     <div class="col-md-12 text-center">
       <h1 class="header-text">"<%= @article.title %>" by <%= @article.author_name %></h1>
       <h4>Created on <%= @article.created_at.strftime("%b %d %Y")%></h4>
+      <div class="col-md-6 mx-auto">
+        <p><%= image_tag @article.image.url, class: "post-image" if @article.image? %></p>
+      </div>
       <h2 id="article-body"><%= @article.body %></h2>
-      <% if @article.image.exists? %>
-        <p><%= image_tag @article.image.url %></p>
-      <% end %>
       <br>
       <h4>
         Tags:

@@ -29,6 +29,12 @@ title-label{
 #article-body{
   margin: 50px 50px;
 }
+@media (max-width: 500px){
+  .post-image{
+    width: 100%
+  }
+}
+
 
 /* Articles Form */
 #cancel-button, #submit-button{

@@ -2,12 +2,12 @@ class Article < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings
-	has_attached_file :image
-	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+	mount_uploader :image, ArticleUploader
 	validates :author_name, presence: {message: "is required"}, length: {maximum: 30}
 	validates :title, presence: {message: "is required"}, length: {maximum: 230}
 	validates :body, presence: {message: "is required"}, length: {maximum: 1600}
 	validates :tag_list, length: {maximum: 230}
+	validate  :image_size
 
 	def tag_list=(tags_string)
 		tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
@@ -20,4 +20,14 @@ class Article < ActiveRecord::Base
 			tag.name
 		end.join(", ")
 	end
+
+private
+
+  # Validates the size of an uploaded image.
+  def image_size
+    if image.size > 5.megabytes
+      errors.add(:image, "(Select image with smaller file size)")
+    end
+  end
+
 end
