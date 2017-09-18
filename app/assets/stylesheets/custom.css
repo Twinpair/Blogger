@@ -73,6 +73,9 @@ title-label{
   #footer{
     font-size: 14px;
   }
+  #source-code{
+    margin: 12px 0;
+  }
 }
 #footer .text-left {
   color: white;
