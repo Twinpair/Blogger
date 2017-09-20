@@ -1,11 +1,12 @@
 class TagsController < ApplicationController
 	
 	def index
-		@tags = Tag.order(name: :asc)
+		@tags = Tag.all
 	end
 	
 	def show
 		@tag = Tag.find(params[:id])
+		@tag_articles = @tag.articles
 	end
 
 	def destroy

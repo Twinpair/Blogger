@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  default_scope -> { order(created_at: :desc) }
 	has_many :comments, dependent: :destroy
 	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings
