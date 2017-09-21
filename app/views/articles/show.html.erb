@@ -10,7 +10,7 @@
       </div>
       <h2 id="article-body"><%= @article.body %></h2>
       <br>
-      <h4>
+      <h4 id="tags">
         Tags:
         <% @article.tags.each do |tag| %>
           <%= link_to tag.name, tag_path(tag) %>,

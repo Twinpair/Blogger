@@ -4,8 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {title: "Title", body: "Body", author_name: "Author"}
 # column: value
 #
-two: {}
+two: {title: "The One And Only", body: "I am the one and only", author_name: "One and Only"}
 #  column: value

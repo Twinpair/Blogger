@@ -1,7 +1,11 @@
 require 'test_helper'
 
-class TagsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class TagsControllerTest < ActionDispatch::IntegrationTest
+  
+   # Test to verify that a tags#index can be reached 
+  test "should get tags index" do
+    get tags_path
+    assert_response :success
+  end
+
 end

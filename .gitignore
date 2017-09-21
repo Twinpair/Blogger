@@ -21,3 +21,6 @@
 
 # Ignore uploaded test images.
 /public/uploads
+
+# Ignore byebug info
+.byebug_history
