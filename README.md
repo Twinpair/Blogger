@@ -1,4 +1,4 @@
-## Blogger
+## Blogger [![Build Status](https://travis-ci.org/Twinpair/Blogger.svg?branch=master)](https://travis-ci.org/Twinpair/Blogger)
 
 A simple blog application where anyone can post and comment. No login is required to read posts on the site. There is also a feature to search blog post by tags.
 
